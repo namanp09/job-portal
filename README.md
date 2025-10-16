@@ -78,12 +78,17 @@ job-portal/
 
 bash
 cd server
+
 npm install
+
 npm run dev
 
 Create a .env file in /server:
+
 PORT=5000
+
 MONGO_URI=your_mongodb_uri
+
 JWT_SECRET=your_secret_key
 
 ⚠️ Note:
@@ -91,10 +96,13 @@ I have shared my .env file for reference, but you must delete it and create your
 
 🌐 Client Setup
 cd cilent
+
 npm install
+
 npm start
 
 Update API endpoints in your client to match your server routes:
+
 http://localhost:5000/api/...
 
 📈 Future Enhancements
