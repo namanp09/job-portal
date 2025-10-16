@@ -33,20 +33,35 @@ A full-featured **Job Portal** web application where **job seekers** can registe
 ## 📁 Folder Structure
 
 job-portal/
+
 ├── server/
+
 │ ├── controllers/
+
 │ ├── models/
+
 │ ├── routes/
+
 │ ├── middleware/
+
 │ ├── config/
+
 │ ├── server.js
+
 ├── client/
+
 │ ├── src/
+
 │ │ ├── components/
+
 │ │ ├── pages/
+
 │ │ ├── App.js
+
 │ │ ├── index.js
+
 ├── .env
+
 ├── README.md
 
 
