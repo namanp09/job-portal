@@ -4,7 +4,7 @@ A full-featured **Job Portal** web application where **job seekers** can registe
 
 ---
 
-## 🛠️ Tech Stack
+### 🛠️ Tech Stack
 
 ### 💻 Client
 - **React.js** – UI framework  
