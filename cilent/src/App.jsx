@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ApplyJob from "./pages/ApplyJob";
 import Applications from "./pages/Applications";
+import Analytics from "./pages/Analytics";
 import RecruiterLogin from "./components/RecruiterLogin";
 import { AppContext } from "./context/AppContext";
 import Dashboard from "./pages/Dashboard";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/apply-job/:id" element={<ApplyJob />} />
         <Route path="/applications" element={<Applications />} />
+        <Route path="/analytics" element={<Analytics />} />
         <Route path="/dashboard" element={<Dashboard />}>
           {companyToken ? (
             <>
