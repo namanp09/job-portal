@@ -79,7 +79,7 @@ function ApplyJob() {
     }
   }
     const checkAlreadyApplied = () => {
-      const hasApplied = userApplications.some( item => item.jobId._id === JobData._id)
+      const hasApplied = userApplications.some( item => item.jobId && item.jobId._id === JobData._id)
       setIsAlreadyApplied(hasApplied)
     }
 
@@ -144,7 +144,7 @@ function ApplyJob() {
           {/*Right Section more jobs */}
           <div className='w-full lg:w-1/3 mt-8 lg:mt-0 lg:ml-8 space-y-5'>
              <h2>More jobs from {JobData.companyId.name}</h2>
-             {jobs.filter(job => job._id !== JobData._id && job.companyId._id === JobData.companyId._id).
+             {jobs.filter(job => job && job._id !== JobData._id && job.companyId._id === JobData.companyId._id).
              filter(job => {
                // Set of applied jobIds
                 const appliedJobsIds = new Set(userApplications.map(app => app.jobId && app.jobId._id ));

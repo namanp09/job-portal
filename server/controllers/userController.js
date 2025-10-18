@@ -78,8 +78,10 @@ export const getUserJobApplications = async (req, res) => {
         if (!applications) {
             return res.json({ success: false, message: 'No applications found' })
         }
+
+        const filteredApplications = applications.filter(app => app.jobId !== null);
         
-        return res.json({ success: true, applications })
+        return res.json({ success: true, applications: filteredApplications })
         
     } catch (error) {
         res.json({ success: false, message: error.message })
@@ -109,10 +111,11 @@ export const updateUserResume = async (req, res) => {
     }
 }
 export const matchResume = async (req, res) => {
+    console.log("matchResume function called");
     try {
 
       const { jobId } = req.body;
-      const { userId } = req.auth(); // ✅ Clerk fix
+      const { userId } = req.auth; // ✅ Clerk fix
   
       const user = await User.findById(userId);
       if (!user || !user.resume) {
@@ -126,19 +129,30 @@ export const matchResume = async (req, res) => {
         return res.status(404).json({ success: false, message: "Job not found" });
       }
   
+      console.log("Fetching resume from URL:", user.resume);
       const response = await axios.get(user.resume, { responseType: "arraybuffer" });
       const resumeBuffer = Buffer.from(response.data);
+      let resumeText;
   
-      const data = await pdf(resumeBuffer);
-      const resumeText = data.text;
-  
+      try {
+        console.log("Parsing PDF");
+        const data = await pdf(resumeBuffer);
+        resumeText = data.text;
+        console.log("PDF parsed successfully");
+      } catch (error) {
+        console.error("Error parsing PDF:", error);
+        return res.status(500).json({ success: false, message: "Error parsing PDF", error: error.message });
+      }
+
       const model = genAI.getGenerativeModel({ model: "models/gemini-pro-latest" });
   
       const prompt = `Given the following resume and job description, please provide a percentage match, strong points, and improvement suggestions.\n      Resume: ${resumeText}\n      Job Description: ${job.description}\n      Output should be in JSON format with keys: "percentageMatch", "strongPoints", "improvementSuggestions".`;
   
               try {
+                console.log("Calling Gemini API");
                 const result = await model.generateContent(prompt);
                 const responseText = result.response.text();
+                console.log("Gemini API call successful");
       
                 let matchData;
                 try {
@@ -156,8 +170,8 @@ export const matchResume = async (req, res) => {
               } catch (error) {
                 console.error("Error from Gemini API:", error);
                 res
-                  .status(500)
-                  .json({ success: false, message: "Error from Gemini API", error: error.message });
+                  .status(429)
+                  .json({ success: false, message: "API quota exceeded. Please check your plan and billing details." });
               }    } catch (error) {
       console.error("Error in matchResume function:", error);
       res.status(500).json({ success: false, message: error.message });

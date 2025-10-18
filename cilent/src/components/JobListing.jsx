@@ -35,10 +35,10 @@ const JobListing = () => {
         
         const matchesTitle = job => searchFilter.title==="" || job.title.toLowerCase().includes(searchFilter.title.toLowerCase());
 
-        const matchesSearchLocation = job => searchFilter.location==="" || job.location.toLowerCase().includes(searchFilter.location.toLowerCase) ;
+        const matchesSearchLocation = job => searchFilter.location==="" || job.location.toLowerCase().includes(searchFilter.location.toLowerCase()) ;
         
         const newFilteredJobs=jobs.slice().reverse().filter(
-            job=> matchesCategory(job) && matchesLocation(job) && matchesTitle(job) && matchesSearchLocation(job)
+            job=> job && matchesCategory(job) && matchesLocation(job) && matchesTitle(job) && matchesSearchLocation(job)
         )
         
         setFilteredJobs(newFilteredJobs)

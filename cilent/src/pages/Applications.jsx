@@ -124,7 +124,7 @@ const Applications = () => {
           </tr>
         </thead>
         <tbody>
-          {userApplications.map((job,index)=> (
+          {userApplications.filter(job => job.jobId && job.companyId).map((job,index)=> (
             <tr key={index}>
               <td className='py-3 px-4 flex items-center gap-2 border-b'>
                 <img className='w-8 h-8'src={job.companyId.image} alt="" />
@@ -152,7 +152,7 @@ const Applications = () => {
                 })()}
               </td>
             </tr>
-          ))}
+          ))}}
         </tbody>
        </table>
      </div>
