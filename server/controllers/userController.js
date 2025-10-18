@@ -163,7 +163,7 @@ export const matchResume = async (req, res) => {
                     matchData = { rawText: responseText }; // fallback if not JSON
                   }
                 } catch {
-                  matchData = { rawText: responseText }; // fallback if not JSON
+                  matchData = { rawText: responseText }; // fallbacK if not JSON
                 }
       
                 res.json({ success: true, matchData });
