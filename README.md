@@ -2,6 +2,8 @@
 
 A full-featured **Job Portal** web application where **job seekers** can register, apply for jobs, and track their applications, while **recruiters** can post and manage job listings. Built using the **MERN stack** and structured for real-world deployment.
 
+Additionally, the project integrates **Google Gemini AI** to allow users to **analyze how well their resume matches a job description**, enhancing decision-making for applicants.
+
 ---
 
 ### 🛠️ Tech Stack
@@ -17,7 +19,9 @@ A full-featured **Job Portal** web application where **job seekers** can registe
 - **Express.js** – backend framework  
 - **Mongoose** – ODM for MongoDB  
 - **JWT** – authentication  
-- **Bcrypt.js** – password hashing  
+- **Bcrypt.js** – password hashing
+- **Google Gemini API** – for AI-powered resume-job matching 
+  
 
 ### 🛢️ Database
 - **MongoDB Atlas / Local MongoDB**
@@ -73,7 +77,8 @@ job-portal/
 - Register/Login  
 - View job listings  
 - Apply to jobs  
-- Track application status  
+- Track application status
+- **Check resume-job match using Gemini AI** 
 
 ### 🏢 Recruiters
 - Create and manage job listings  
@@ -106,6 +111,8 @@ MONGO_URI=your_mongodb_uri
 
 JWT_SECRET=your_secret_key
 
+GEMINI_API_KEY=your_gemini_api_key
+
 ⚠️ Note:
 I have shared my .env file for reference, but you must delete it and create your own with your own credentials and secret keys before running the application.
 
@@ -122,13 +129,34 @@ http://localhost:5000/api/...
 
 📈 Future Enhancements
 
-Resume upload (via Cloudinary)
+Resume upload via Cloudinary
 
 Admin dashboard for monitoring platform metrics
 
 Email notifications on job applications
 
-Search & filters by role, experience, location
+Advanced search & filters by role, experience, and location
+
+Chat system between recruiters and applicants
+
+Analytics dashboard for recruiters
+
+🧠 Key Learning Areas
+
+Full-stack development using MERN stack
+
+Implementing JWT Authentication & Authorization
+
+AI Integration with Gemini for intelligent resume analysis
+
+RESTful API design and best practices
+
+Responsive UI with Tailwind CSS and React
+
+🧑‍💻 Author
+
+Naman Padiyar
+B.Tech (Computer Engineering), Delhi Technological University (DTU)
 
 
 
