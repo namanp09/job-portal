@@ -19,8 +19,8 @@ const Analytics = () => {
             <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2">Strong Points</h3>
               <ul className="list-disc list-inside">
-                {matchData.strongPoints.map((point, index) => (
-                  <li key={index} className="mb-2">{point}</li>
+                {matchData.strongPoints.map((item, index) => (
+                  <li key={index} className="mb-2">{item.point}</li>
                 ))}
               </ul>
             </div>
@@ -28,8 +28,8 @@ const Analytics = () => {
             <div>
               <h3 className="text-xl font-semibold mb-2">Improvement Suggestions</h3>
               <ul className="list-disc list-inside">
-                {matchData.improvementSuggestions.map((suggestion, index) => (
-                  <li key={index} className="mb-2">{suggestion}</li>
+                {matchData.improvementSuggestions.map((item, index) => (
+                  <li key={index} className="mb-2">{item.point}</li>
                 ))}
               </ul>
             </div>

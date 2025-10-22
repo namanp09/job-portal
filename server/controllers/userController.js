@@ -146,7 +146,7 @@ export const matchResume = async (req, res) => {
 
       const model = genAI.getGenerativeModel({ model: "models/gemini-pro-latest" });
   
-      const prompt = `Given the following resume and job description, please provide a percentage match, strong points, and improvement suggestions.\n      Resume: ${resumeText}\n      Job Description: ${job.description}\n      Output should be in JSON format with keys: "percentageMatch", "strongPoints", "improvementSuggestions".`;
+      const prompt = `Given the following resume and job description, please provide a percentage match, strong points, and improvement suggestions.\n      Resume: ${resumeText}\n      Job Description: ${job.description}\n      Output should be in JSON format with keys: "percentageMatch" (string), "strongPoints" (array of objects with "point" and "evidence" keys), "improvementSuggestions" (array of objects with "point" and "evidence" keys).`;
   
               try {
                 console.log("Calling Gemini API");

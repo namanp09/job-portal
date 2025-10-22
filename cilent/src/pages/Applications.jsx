@@ -152,7 +152,7 @@ const Applications = () => {
                 })()}
               </td>
             </tr>
-          ))}}
+          ))}
         </tbody>
        </table>
      </div>
