@@ -163,3 +163,5 @@ B.Tech (Computer Engineering), Delhi Technological University (DTU)
 
 <img width="1440" alt="Screenshot 2025-06-27 at 5 29 04 PM" src="https://github.com/user-attachments/assets/815dda0d-bf71-41ec-829c-1826abd02559" />
 <img width="1440" alt="Screenshot 2025-06-27 at 5 29 33 PM" src="https://github.com/user-attachments/assets/f40e68d1-9e7d-4acf-8a02-3275a11addcd" />
+<img width="1440" height="900" alt="Screenshot 2025-11-13 at 8 43 08 PM" src="https://github.com/user-attachments/assets/e1c53816-4386-4672-8617-d9b7f435aca2" />
+<img width="1440" height="855" alt="Screenshot 2025-11-13 at 8 55 51 PM" src="https://github.com/user-attachments/assets/e0345aff-d47f-4f7a-ae31-cb754edf2390" />
